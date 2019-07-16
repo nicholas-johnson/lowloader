@@ -1,6 +1,6 @@
 const _cache = {};
 
-const cache = {
+export const cache = {
   add(url, data) { 
     _cache[url] = data; 
   },
