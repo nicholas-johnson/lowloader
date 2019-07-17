@@ -1,0 +1,27 @@
+{
+  "name": "lowloader",
+  "version": "1.0.0",
+  "description": "An unsurprising script loader. Give it a URL, it will return a Promise that will resolve when the script is loaded. Then do what you like.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup src/index.ts --format cjs --file lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholas-johnson/unsurprising-loader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholas-johnson/unsurprising-loader/issues"
+  },
+  "homepage": "https://github.com/nicholas-johnson/unsurprising-loader#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0",
+    "rollup": "^1.17.0",
+    "rollup-plugin-typescript": "^1.0.1"
+  },
+  "dependencies": {}
+}
