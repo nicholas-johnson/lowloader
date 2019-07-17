@@ -1,16 +1,18 @@
-import { cache } from './cache';
+import { cache } from "./cache";
 
-const load = (url) => {
+const load = url => {
   const loader = new Promise((resolve, reject) => {
-    const el = document.createElement('script');
+    const el = document.createElement("script");
     el.async = false;
 
-    el.onload = (data) => {
+    el.onload = data => {
       resolve(url);
     };
 
-    el.onerror = (err) => {
-      console.warn(`Lowloader: could not load code from url: ${url} - ${err.message}`);
+    el.onerror = err => {
+      console.warn(
+        `Lowloader: could not load code from url: ${url} - ${err.message}`
+      );
       cache.remove(url);
       reject(url);
     };
@@ -18,12 +20,10 @@ const load = (url) => {
     el.src = url;
     document.head.appendChild(el);
   });
-  cache.add(url, loader);
+  cache.put(url, loader);
   return loader;
 };
 
-export const loader = (url) => {
-  return cache.check(url) ?
-    cache.get(url) :
-    load(url);
+export const loader = url => {
+  return cache.check(url) ? cache.get(url) : load(url);
 };
