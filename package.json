@@ -4,8 +4,8 @@
   "description": "An unsurprising script loader. Give it a URL, it will return a Promise that will resolve when the script is loaded. Then do what you like.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup src/index.ts --format cjs --file lib/index.js"
+    "test": "jest",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,10 @@
     "@types/jest": "^24.0.15",
     "jest": "^24.8.0",
     "rollup": "^1.17.0",
-    "rollup-plugin-typescript": "^1.0.1"
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
   },
   "dependencies": {}
 }
