@@ -21,11 +21,11 @@ This increases productivity since apps are kept small and never get too complex 
 
 LowLoader is a Framework/build tool agnostic script loader built for micro-frontends.
 
-1. Build your app in whatever framework/tool you like. eg. create-react-app.
-2. Deploy your code to some web-accessible location. In production, this will be a CDN. For local dev, this might be a live-server, Apache webroot, IIS webroot, etc.
+1. Build your app in whatever framework/tool you like. eg. create-react-app, Angular, AngularJS, Vue, Backbone, ES6, Typescript, JQuery, Webpack, Rollup, etc. etc.
+2. Deploy your code to some web-accessible location. In production, this will be a CDN. For local dev, this might be a live-server, Apache webroot, IIS, etc.
 3. Load your code on-demand with loader.load.
 
-To orchestrate code loading based on routing, we recommend Single-Spa. https://github.com/CanopyTax/single-spa
+To orchestrate code loading based on routing, I recommend Single-Spa. https://github.com/CanopyTax/single-spa
 
 ## Export arbitrary code from a web location and import it on demand
 
@@ -82,10 +82,13 @@ Here we download React and ReactDom.
     loader.load(reactUrl)
       .then(() => {loader.load(reactDomUrl)})
       .then(() => {
-        reactDom.createElement('div', {}, null)
+        ReactDOM.render(
+          React.createElement('div', null, 'Hello World'),
+          document.getElementById('root')
+        );
       })
 
-If you want to load dependencies this way, and you find yourself relying on global values of React, you can tell Webpack to treat react as an [external](https://webpack.js.org/configuration/externals/). This will tell React to look for window.react instead of bundling React into the app. This will allow you to share a common version of React between multiple microapps.
+If you want to load dependencies this way, and you find yourself relying on global values of React in your microapps, you can tell Webpack to treat React as an [external](https://webpack.js.org/configuration/externals/). This will tell React to look for window.react instead of bundling React into the app. This will allow you to share a common version of React between multiple microapps.
 
 ## Local caching
 
@@ -106,4 +109,6 @@ onLoad the promise resolves. onError it rejects. Export simply squirrels the obj
 
 ## LowLoader / SingleSpa demo
 
-Coming Soon...
+Work in progress:
+
+https://github.com/nicholas-johnson/lowloader-singlespa-microfrontends-example
