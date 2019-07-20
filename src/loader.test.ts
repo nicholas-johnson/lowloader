@@ -28,9 +28,9 @@ describe("Loader", () => {
     it("handles onError", () => {
       const reject = jest.fn();
       const artifact = "cats";
-      const err = "Oh crabsticks.";
+      const evt = {} as Event;
       window["lowloader"].tempArtifact = artifact;
-      loader.handleOnError(url, err, reject);
+      loader.handleOnError(evt, url, reject);
       expect(reject).toHaveBeenCalled();
       expect(window["lowloader"].tempArtifact).toBeNull();
     });

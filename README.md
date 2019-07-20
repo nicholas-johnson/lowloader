@@ -1,7 +1,5 @@
 # Low Loader
 
-**Note this is Beta software, and may not work as expected.**
-
 An unsurprising script loader built for **Microfrontends.** Give it a URL, it will download the JavaScript from the location and resolve a promise when it's done.
 
 Designed for loading code from a CDN into a Browser. Entirely agnostic of build tool. Use Webpack, Rollup, Grunt, Browserify, etc, etc. Use any library or framework.
@@ -29,7 +27,26 @@ LowLoader is a Framework/build tool agnostic script loader built for micro-front
 
 To orchestrate code loading based on routing, we recommend Single-Spa. https://github.com/CanopyTax/single-spa
 
-## Advanced Usage
+## Export arbitrary code from a web location and import it on demand
+
+Microfrontends work best if you can build your apps independently, put them on a CDN, and load them into your SPA on demand. If your user is not viewing the settings page, just don't load it. If the user is not on a dashboard, don't load the code. Load the code you need on demand as the user navigates your app.
+
+Create a js file and put it on a CDN (http://mycdn.com/my-app.js):
+
+    import lowloader from 'lowloader';
+
+    const app = {
+      sayHello: () => console.log('hello');
+    }
+
+    lowloader.export(app);
+
+Now from another js file you can dynamically import it.
+
+    import lowloader from 'lowloader';
+
+    lowloader.import('http://mycdn.com/my-app.js)
+      .then((myApp) => myApp.sayHello());
 
 ## Dynamically load shared dependencies using promises
 
@@ -120,3 +137,5 @@ Now in your microfrontend code, you can now write:
 Note that the `then` callback function receives the microapp as a parameter. No globals required.
 
 ## LowLoader / SingleSpa demo
+
+Coming Soon...
