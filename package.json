@@ -1,7 +1,7 @@
 {
   "name": "lowloader",
-  "version": "1.0.0",
-  "description": "An unsurprising script loader. Give it a URL, it will return a Promise that will resolve when the script is loaded. Then do what you like.",
+  "version": "0.0.1",
+  "description": "A module loader built for microfrontends. Give it a URL, it will return a Promise that will resolve when the module is available.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -22,9 +22,11 @@
     "jest": "^24.8.0",
     "rollup": "^1.17.0",
     "rollup-plugin-typescript": "^1.0.1",
-    "tslib": "^1.10.0",
     "ts-jest": "^24.0.2",
+    "tslib": "^1.10.0",
     "typescript": "^3.5.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "husky": "^3.0.1"
+  }
 }
