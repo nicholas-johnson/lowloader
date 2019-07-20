@@ -1,6 +1,6 @@
 {
   "name": "lowloader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A module loader built for microfrontends. Give it a URL, it will return a Promise that will resolve when the module is available.",
   "main": "lib/index.js",
   "scripts": {
