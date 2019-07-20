@@ -85,7 +85,7 @@ Here we download React and ReactDom.
         reactDom.createElement('div', {}, null)
       })
 
-If you want to load dependencies this way, and you find yourself relying on global values of React, you can tell Webpack to treat react as an (external)[https://webpack.js.org/configuration/externals/]. This will tell React to look for window.react instead of bundling React into the app. This will allow you to share a common version of React between multiple microapps.
+If you want to load dependencies this way, and you find yourself relying on global values of React, you can tell Webpack to treat react as an [external](https://webpack.js.org/configuration/externals/). This will tell React to look for window.react instead of bundling React into the app. This will allow you to share a common version of React between multiple microapps.
 
 ## Local caching
 
