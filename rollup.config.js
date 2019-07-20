@@ -5,6 +5,6 @@ export default {
   plugins: [typescript()],
   output: {
     file: "./lib/index.js",
-    format: "cjs"
+    format: "esm"
   }
 };

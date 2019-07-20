@@ -6,7 +6,7 @@ describe("Loader", () => {
   beforeEach(() => {
     loader = new Loader();
     url = "https://cats.dogs.com/hats";
-    window["lowLoader"] = {};
+    window["lowloader"] = {};
   });
 
   describe("load", () => {
@@ -19,20 +19,20 @@ describe("Loader", () => {
     it("handles onLoad", () => {
       const resolve = jest.fn();
       const artifact = "cats";
-      window["lowLoader"].tempArtifact = artifact;
+      window["lowloader"].tempArtifact = artifact;
       loader.handleOnLoad(url, resolve);
       expect(resolve).toHaveBeenCalledWith(artifact);
-      expect(window["lowLoader"].tempArtifact).toBeNull();
+      expect(window["lowloader"].tempArtifact).toBeNull();
     });
 
     it("handles onError", () => {
       const reject = jest.fn();
       const artifact = "cats";
       const err = "Oh crabsticks.";
-      window["lowLoader"].tempArtifact = artifact;
+      window["lowloader"].tempArtifact = artifact;
       loader.handleOnError(url, err, reject);
       expect(reject).toHaveBeenCalled();
-      expect(window["lowLoader"].tempArtifact).toBeNull();
+      expect(window["lowloader"].tempArtifact).toBeNull();
     });
   });
 });

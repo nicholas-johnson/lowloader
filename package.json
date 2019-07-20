@@ -1,8 +1,8 @@
 {
   "name": "lowloader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A module loader built for microfrontends. Give it a URL, it will return a Promise that will resolve when the module is available.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "build": "rollup -c"
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicholas-johnson/unsurprising-loader.git"
+    "url": "git+https://github.com/nicholas-johnson/lowloader.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nicholas-johnson/unsurprising-loader/issues"
+    "url": "https://github.com/nicholas-johnson/lowloader/issues"
   },
-  "homepage": "https://github.com/nicholas-johnson/unsurprising-loader#readme",
+  "homepage": "https://github.com/nicholas-johnson/lowloader",
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "jest": "^24.8.0",

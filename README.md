@@ -1,5 +1,7 @@
 # Low Loader
 
+**Note this is Beta software, and may not work as expected.**
+
 An unsurprising script loader built for **Microfrontends.** Give it a URL, it will download the JavaScript from the location and resolve a promise when it's done.
 
 Designed for loading code from a CDN into a Browser. Entirely agnostic of build tool. Use Webpack, Rollup, Grunt, Browserify, etc, etc. Use any library or framework.

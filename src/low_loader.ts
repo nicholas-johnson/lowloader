@@ -17,6 +17,7 @@ export class LowLoader {
     const loader = new Loader();
     const promise = loader.load(url);
     this.cache.put(url, promise);
+    return promise;
   }
 
   export(data) {
