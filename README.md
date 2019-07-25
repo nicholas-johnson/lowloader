@@ -1,8 +1,10 @@
 # Low Loader
 
-An unsurprising script loader built for **Microfrontends.** Give it a URL, it will download the JavaScript from the location and resolve a promise when it's done.
+An unremarkable script loader built for **Microfrontends.** Give it a URL, it will download the JavaScript from the location and resolve a promise when it's done.
 
-Designed for loading code from a CDN into a Browser. Entirely agnostic of build tool. Use Webpack, Rollup, Grunt, Browserify, etc, etc. Use any library or framework.
+Very simple, zero config, single purpose, tiny. No tooling required, it just works.
+
+Designed for loading code from a CDN into a Browser. Entirely agnostic of build tool. Use Webpack, Rollup, Grunt, Browserify, etc, etc. Use any library, framework or language.
 
 ## Basic Usage
 
@@ -90,6 +92,12 @@ If you want to load dependencies this way, and you find yourself relying on glob
 ## Local caching
 
 Lowloader automatically caches by URL. You won't download the same code more than once, no matter how many times you import it. Lowloader's cache is a browser singleton so you can import wherever you like and Lowloader will handle it. If the code is already loaded, `import` will return a resolved promise.
+
+## Comparison with SystemJS
+
+Because SystemJS is implemented with tooling, it requires a good deal of setup, and can be a pain to integrate into older apps.
+
+Lowloader takes a zero config approach. It does one thing, it loads code into the browser. There's nothing to think about and nothing to go wrong. Your existing build pipeline can remain unchanged.
 
 ## How it works
 
