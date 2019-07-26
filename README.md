@@ -1,8 +1,8 @@
 # Low Loader
 
-An unremarkable script loader built for **Microfrontends.** Give it a URL, it will download the JavaScript from the location and resolve a promise when it's done.
+An unremarkable script loader built specifically for **Microfrontends.** Give it a URL, it will download the JavaScript from the location and resolve a promise when it's done.
 
-Very simple, zero config, single purpose, tiny. No tooling required, it just works.
+Very simple, zero config, single purpose, tiny. Works with all architectures, legacy and modern. No tooling required, it just works.
 
 Designed for loading code from a CDN into a Browser. Entirely agnostic of build tool. Use Webpack, Rollup, Grunt, Browserify, etc, etc. Use any library, framework or language.
 
